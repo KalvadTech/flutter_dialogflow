@@ -7,15 +7,12 @@ class Dialogflow {
   final AuthGoogle authGoogle;
 
   String sessionId;
+  String environment;
 
-  // TODO check this
-  Dialogflow({
-    @required this.authGoogle,
-    this.sessionId,
-  });
+  Dialogflow({@required this.authGoogle, this.sessionId, this.environment});
 
   String _getUrl() {
-    return 'https://dialogflow.googleapis.com/v2/projects/${authGoogle.getProjectId}/agent/sessions/$sessionId:detectIntent';
+    return 'https://dialogflow.googleapis.com/v2/projects/${authGoogle.getProjectId}/agent/environments/$environment/users/-/sessions/$sessionId:detectIntent';
   }
 
   Future<DetectIntentResponse> detectIntent(DetectIntentRequest params) async {
