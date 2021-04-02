@@ -57,10 +57,12 @@ class AuthGoogle {
     Encoding encoding,
   }) async {
     if (!hasExpired) {
-      return await http.post(url, headers: headers, body: body);
+      return await http.post(Uri.parse(url as String),
+          headers: headers, body: body);
     } else {
       await build();
-      return await http.post(url, headers: headers, body: body);
+      return await http.post(Uri.parse(url as String),
+          headers: headers, body: body);
     }
   }
 }

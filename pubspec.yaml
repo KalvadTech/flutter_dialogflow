@@ -1,6 +1,6 @@
 name: flutter_dialogflow_v2
 description: This package is useful to integrate dialogflow v2.1 in your Flutter project, it provides detectIntent request and response data with json mapping.
-version: 0.4.1
+version: 0.4.2
 repository: https://github.com/KalvadTech/flutter_dialogflow
 homepage: https://github.com/KalvadTech/flutter_dialogflow
 issue_tracker: https://github.com/KalvadTech/flutter_dialogflow/issues
