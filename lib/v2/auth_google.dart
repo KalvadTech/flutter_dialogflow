@@ -51,18 +51,16 @@ class AuthGoogle {
   }
 
   Future<Response> post(
-    url, {
-    Map<String, String> headers,
-    body,
+    String url, {
+    Map<String, dynamic> headers,
+    String body,
     Encoding encoding,
   }) async {
     if (!hasExpired) {
-      return await http.post(Uri.parse(url as String),
-          headers: headers, body: body);
+      return await http.post(Uri.parse(url), headers: headers, body: body);
     } else {
       await build();
-      return await http.post(Uri.parse(url as String),
-          headers: headers, body: body);
+      return await http.post(Uri.parse(url), headers: headers, body: body);
     }
   }
 }
