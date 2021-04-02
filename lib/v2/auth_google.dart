@@ -52,8 +52,8 @@ class AuthGoogle {
 
   Future<Response> post(
     String url, {
-    Map<String, dynamic> headers,
-    String body,
+    Map<String, String> headers,
+    body,
     Encoding encoding,
   }) async {
     if (!hasExpired) {
